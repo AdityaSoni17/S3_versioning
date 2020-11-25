@@ -13,8 +13,6 @@ class S3VersionTest:
         self.bucket_name = 'generatedbucket'
         self.bucket_file_name = "first_data.json"
         self.local_file_name = "data.json"
-
-    def data_Examole(self):
         self.sample_data = json.dumps({
             'name': 'aditya',
             'work': 'python',
@@ -32,8 +30,7 @@ class S3VersionTest:
 
     def create_bucket(self):
         # Create bucket syntax
-        bucket = self.s3_client.create_bucket(
-        Bucket = self.bucket_name)
+        bucket = self.s3_client.create_bucket(Bucket = self.bucket_name)
         return bucket
 
     def bucket_list(self):
@@ -58,7 +55,7 @@ class S3VersionTest:
     def bucket_Version(self):
         # Enabling Bucketversioning
         versioning = self.s3_resource.BucketVersioning(bucket_name = self.bucket_name)
-        return self.current_bucket().Versioning().enable()
+        self.current_bucket().Versioning().enable()
 
     def put_object(self,bucket_name,key,body):
         object = self.s3_client.put_object(Bucket = bucket_name, Key = key, Body = body)
