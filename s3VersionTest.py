@@ -82,10 +82,5 @@ def lambda_handler(event, context):
                                          body = json.dumps(update_sample_data))
     return {
         "statusCode": 200,
-        "body":
-        {
-            "bucket": bucket,
-            "first object": first_object,
-            "updated object": updated_object,
-        }
+        "body":"Version Updated!!!!!"        
     }
